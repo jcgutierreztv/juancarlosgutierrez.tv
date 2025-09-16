@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Administrador de Contenidos</title>
 
-    <!-- Widget de Identity (necesario para Git Gateway) -->
+    <!-- Widget de Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Decap CMS (Netlify CMS). Uso jsDelivr por si unpkg está bloqueado en tu red -->
+    <!-- Editor (Decap CMS) -->
     <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.1.8/dist/decap-cms.js"></script>
 
     <script>
-      // Iniciar el CMS a mano y cargar el config desde /admin
+      // Iniciar manualmente el editor y tomar el config desde /admin
       window.CMS_MANUAL_INIT = true;
       CMS.init({ config: 'config.yml' });
 
-      // Si hace login, recarga para mostrar el panel
+      // Mostrar login si hace falta y recargar al entrar
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on('login', () => window.location.reload());
+        window.netlifyIdentity.on('init', user => {
+          if (!user) window.netlifyIdentity.open(); // abre el login si no hay usuario
+        });
       }
     </script>
 
