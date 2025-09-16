@@ -4,10 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Administrador de Contenidos</title>
-    <!-- Usamos Decap CMS (nuevo nombre de Netlify CMS) -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      // Forzamos la carga por si el auto-init falla
       window.CMS_MANUAL_INIT = true;
       CMS.init({ config: '/admin/config.yml' });
     </script>
