@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Administrador de Contenidos</title>
 
-    <!-- Editor: Decap CMS (ex Netlify CMS). Pin fijo para evitar fallas. -->
-    <script src="https://unpkg.com/decap-cms@3.1.8/dist/decap-cms.js"></script>
+    <!-- Widget de Identity (necesario para Git Gateway) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Decap CMS (Netlify CMS). Uso jsDelivr por si unpkg está bloqueado en tu red -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.1.8/dist/decap-cms.js"></script>
 
     <script>
-      // Iniciar manualmente y forzar que tome el config dentro de /admin
+      // Iniciar el CMS a mano y cargar el config desde /admin
       window.CMS_MANUAL_INIT = true;
-      CMS.init({ config: 'config.yml' }); // relativo a /admin
+      CMS.init({ config: 'config.yml' });
+
+      // Si hace login, recarga para mostrar el panel
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('login', () => window.location.reload());
+      }
     </script>
+
+    <style>
+      body{font-family:system-ui;background:#0b0e17;color:#e7e7ea}
+    </style>
   </head>
-  <body></body>
+  <body>Abriendo el editor…</body>
 </html>
