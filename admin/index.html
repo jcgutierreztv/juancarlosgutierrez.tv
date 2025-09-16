@@ -4,10 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Administrador de Contenidos</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Editor: Decap CMS (ex Netlify CMS). Pin fijo para evitar fallas. -->
+    <script src="https://unpkg.com/decap-cms@3.1.8/dist/decap-cms.js"></script>
+
     <script>
+      // Iniciar manualmente y forzar que tome el config dentro de /admin
       window.CMS_MANUAL_INIT = true;
-      CMS.init({ config: '/admin/config.yml' });
+      CMS.init({ config: 'config.yml' }); // relativo a /admin
     </script>
   </head>
   <body></body>
