@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Carlos Gutiérrez TV</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Juan Carlos Gutiérrez TV</h1>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/admin">Editar contenido</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 id="home-title">Cargando…</h2>
+      <div id="home-content">Espera un momento…</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> Juan Carlos Gutiérrez</small>
+    </div>
+  </footer>
+
+  <script>
+    // Render year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Load markdown from /content/home.md and render it
+    fetch('/content/home.md?v=' + Date.now())
+      .then(function(r){ 
+        if(!r.ok) throw new Error('No se pudo cargar content/home.md');
+        return r.text();
+      })
+      .then(function(text){
+        // Split front matter (---) to get title
+        let title = 'Inicio';
+        const fmMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)/);
+        let body = text;
+        if (fmMatch) {
+          const fm = fmMatch[1];
+          body = fmMatch[2];
+          // Simple parse of title: key: value
+          const titleMatch = fm.match(/title:\s*(.*)/);
+          if (titleMatch) title = titleMatch[1].trim();
+        }
+        document.getElementById('home-title').textContent = title;
+        document.getElementById('home-content').innerHTML = marked.parse(body);
+      })
+      .catch(function(err){
+        document.getElementById('home-title').textContent = 'Inicio';
+        document.getElementById('home-content').textContent = 'No se encontró contenido. Entra a /admin para crear o editar.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
