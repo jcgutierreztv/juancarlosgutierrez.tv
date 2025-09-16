@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Administrador de Contenidos</title>
 
-    <!-- Widget de Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Editor (Decap CMS) -->
     <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.1.8/dist/decap-cms.js"></script>
 
     <script>
-      // Iniciar manualmente el editor y tomar el config desde /admin
       window.CMS_MANUAL_INIT = true;
       CMS.init({ config: 'config.yml' });
 
-      // Mostrar login si hace falta y recargar al entrar
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('login', () => window.location.reload());
         window.netlifyIdentity.on('init', user => {
-          if (!user) window.netlifyIdentity.open(); // abre el login si no hay usuario
+          if (!user) document.getElementById('login').style.display = 'inline-block';
         });
+        window.netlifyIdentity.on('login', () => window.location.reload());
       }
     </script>
 
     <style>
-      body{font-family:system-ui;background:#0b0e17;color:#e7e7ea}
+      body{font-family:system-ui;background:#0b0e17;color:#e7e7ea;padding:24px}
+      a.btn{display:none;padding:10px 14px;border:1px solid #4dd2ff;border-radius:8px;color:#4dd2ff;text-decoration:none}
+      a.btn:hover{background:#102433}
     </style>
   </head>
-  <body>Abriendo el editor…</body>
+  <body>
+    Abriendo el editor…
+    <br><br>
+    <a id="login" class="btn" href="#" onclick="window.netlifyIdentity && window.netlifyIdentity.open(); return false;">
+      Iniciar sesión
+    </a>
+  </body>
 </html>
