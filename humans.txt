@@ -1,0 +1,13 @@
+/* TEAM */
+Author: Juan Carlos Gutiérrez
+Role: Periodista Internacional & Marketing Estratégico
+Contact: jcgutierreztv@gmail.com
+Twitter/X: @jcgutierreztv
+Instagram: @jcgutierreztv
+TikTok: @jcgutierreztv
+Facebook: @jcgutierreztv
+
+/* SITE */
+Last update: 2025-09-08
+Language: Spanish
+Doctype: HTML5
