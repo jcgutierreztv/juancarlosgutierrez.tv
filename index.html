@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Juan Carlos Gutiérrez | Periodista internacional y presentador</title>
-  <meta name="description" content="Juan Carlos Gutiérrez. Periodista internacional y presentador. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV) en vivo de lunes a viernes, 4 horas diarias. 25 años de trayectoria en TV internacional." />
+  <meta name="description" content="Juan Carlos Gutiérrez. Periodista internacional y presentador. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV) en vivo de lunes a viernes, 4 horas diarias." />
   <link rel="canonical" href="https://www.juancarlosgutierrez.tv/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Juan Carlos Gutiérrez | Periodista internacional y presentador" />
-  <meta property="og:description" content="DNEWS EN LA MAÑANA (DNEWS de DIRECTV), en vivo de lunes a viernes. 25 años de experiencia en televisión internacional." />
+  <meta property="og:description" content="Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV) en vivo de lunes a viernes, 4 horas diarias." />
   <meta property="og:url" content="https://www.juancarlosgutierrez.tv/" />
   <meta name="twitter:card" content="summary" />
 
@@ -21,7 +21,7 @@
     "name": "Juan Carlos Gutiérrez",
     "url": "https://www.juancarlosgutierrez.tv",
     "jobTitle": "Periodista y presentador de noticieros en vivo",
-    "description": "Periodista internacional y presentador con 25 años en televisión. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV) en vivo de lunes a viernes, 4 horas diarias.",
+    "description": "Periodista internacional y presentador. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV) en vivo de lunes a viernes, 4 horas diarias.",
     "worksFor": { "@type": "Organization", "name": "DNEWS" },
     "affiliation": { "@type": "Organization", "name": "DIRECTV" },
     "sameAs": [
@@ -38,7 +38,7 @@
       --text:#0f172a;
       --muted:#475569;
       --line:rgba(15,23,42,.10);
-      --card:rgba(255,255,255,.80);
+      --card:rgba(255,255,255,.82);
       --shadow:0 14px 40px rgba(2,6,23,.10);
       --radius:18px;
       --brand:#1d4ed8;
@@ -57,9 +57,10 @@
     }
     a{color:inherit}
     .wrap{max-width:1120px;margin:0 auto;padding:22px}
+
     header{
       position:sticky;top:0;z-index:50;
-      background: rgba(246,247,251,.78);
+      background: rgba(246,247,251,.80);
       backdrop-filter: blur(12px);
       border-bottom:1px solid var(--line);
     }
@@ -113,8 +114,8 @@
       line-height:1.08;
       letter-spacing:-.3px;
     }
-    .lead{margin:0 0 14px;color:var(--muted);font-size:18px;max-width:70ch}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}
+    .lead{margin:0 0 14px;color:var(--muted);font-size:18px;max-width:72ch}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
     .badge{
       background: rgba(29,78,216,.10);
       border:1px solid rgba(29,78,216,.20);
@@ -129,23 +130,8 @@
       border:1px solid rgba(124,58,237,.20);
       color:#4c1d95;
     }
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:12px 14px;
-      border-radius: 12px;
-      text-decoration:none;
-      font-weight:900;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.75);
-    }
-    .btn.primary{
-      background: linear-gradient(90deg, var(--brand), var(--brand2));
-      color:#fff;
-      border: none;
-    }
-    .btn:hover{transform: translateY(-1px)}
 
+    /* FOTO HERO: rostro centrado */
     .heroPhoto{
       height:100%;
       min-height: 280px;
@@ -153,10 +139,11 @@
         linear-gradient(180deg, rgba(2,6,23,.08), rgba(2,6,23,.40)),
         url("https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/jcgutierrez_web-9-4.jpg?w=1600");
       background-size: cover;
-      background-position: center;
+      background-position: 50% 20%; /* Ajuste clave para subir el rostro al centro */
       display:flex;
       align-items:flex-end;
     }
+    /* Si aun así te corta la cara, cambia SOLO la línea url(...) por otra foto vertical y listo. */
     .heroPhoto .caption{
       width:100%;
       padding:16px 18px;
@@ -173,16 +160,6 @@
       display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
       margin-bottom:10px;
     }
-    .tag{
-      text-decoration:none;
-      font-weight:900;
-      color:var(--text);
-      background: rgba(15,23,42,.06);
-      border:1px solid var(--line);
-      padding:10px 12px;
-      border-radius:999px;
-    }
-    .tag:hover{background: rgba(15,23,42,.10)}
 
     /* Carrusel logos */
     .logoWrap{
@@ -227,7 +204,7 @@
       to { transform: translateX(-50%); }
     }
 
-    /* Caja IG */
+    /* Últimos trabajos (IG) */
     .igGrid{
       display:grid;
       grid-template-columns: 1fr .95fr;
@@ -245,9 +222,27 @@
     }
     .igBox iframe{width:100%;height:100%;border:0;min-height:420px}
 
+    /* Servicios */
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     @media (max-width: 940px){ .grid3{grid-template-columns:1fr} }
     .svcImg{width:100%;height:190px;object-fit:cover;display:block}
+
+    /* Botones: SOLO al final */
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight:900;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.75);
+    }
+    .btn.primary{
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color:#fff;
+      border: none;
+    }
 
     .footer{
       border-top:1px solid var(--line);
@@ -296,16 +291,6 @@
             <span class="badge">En vivo · Lunes a viernes</span>
             <span class="badge alt">Trayectoria internacional</span>
           </div>
-
-          <div class="ctaRow">
-            <a class="btn primary" href="/quien-soy.html" title="Perfil editorial de Juan Carlos Gutiérrez">Ver perfil editorial</a>
-            <a class="btn" href="#ultimos">Últimos trabajos</a>
-            <a class="btn" href="#contacto">Escríbeme</a>
-          </div>
-
-          <p class="muted" style="margin-top:12px;">
-            Conducción en vivo, entrevistas y coberturas internacionales con rigor editorial y ritmo televisivo.
-          </p>
         </div>
       </div>
 
@@ -317,24 +302,21 @@
     <section aria-label="Medios y organizaciones">
       <div class="kicker">
         <h2>Medios y organizaciones</h2>
-        <span class="muted">Algunas de las señales y marcas vinculadas a mi trayectoria.</span>
+        <span class="muted">Cadenas y marcas vinculadas a mi trayectoria.</span>
       </div>
 
       <div class="logoWrap">
         <div class="logoTrack" aria-label="Carrusel de logos (pausa al pasar el mouse)">
           <div class="logos">
-            <!-- NUEVOS -->
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/12/313087317_144064551695256_1903996844848453663_n-2-e1766094459856.jpg?w=400" alt="DNEWS" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/12/directv-e1766094477979.jpg?w=400" alt="DIRECTV" loading="lazy">
-
-            <!-- ORIGINALES -->
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/logo_univision_2019.svg_-e1719613321533.png?w=300" alt="Univision" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/cgtnespanol-512-1.png?w=400" alt="CGTN Español" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/dearroyo-imagotipo-02.png?w=450" alt="Dearroyo Production" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/cool_channel_tv-e1719612691879.png?w=300" alt="Cool Channel TV" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/digital-video.png?w=300" alt="Digital Video" loading="lazy">
 
-            <!-- DUPLICADO PARA LOOP -->
+            <!-- duplicado para loop -->
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/12/313087317_144064551695256_1903996844848453663_n-2-e1766094459856.jpg?w=400" alt="DNEWS" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/12/directv-e1766094477979.jpg?w=400" alt="DIRECTV" loading="lazy">
             <img class="logoItem" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2024/06/logo_univision_2019.svg_-e1719613321533.png?w=300" alt="Univision" loading="lazy">
@@ -350,7 +332,7 @@
     <section aria-label="Qué hago">
       <div class="kicker">
         <h2>Qué hago</h2>
-        <a class="tag" href="#ultimos">Últimos trabajos → @jcgutierreztv</a>
+        <span class="muted">Periodismo, producción y comunicación estratégica.</span>
       </div>
 
       <div class="grid3">
@@ -363,18 +345,18 @@
         </article>
 
         <article class="card">
-          <img class="svcImg" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/09/imagen-de-whatsapp-2025-09-08-a-las-15.59.25_e10f4974.jpg?w=1400" alt="Cobertura periodística internacional" loading="lazy">
+          <img class="svcImg" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/09/imagen-de-whatsapp-2025-09-08-a-las-15.59.25_e10f4974.jpg?w=1400" alt="Cobertura internacional" loading="lazy">
           <div class="p">
             <h3>Cobertura internacional</h3>
-            <p class="muted">Terreno, enlaces, crónica y análisis para audiencias regionales.</p>
+            <p class="muted">Coberturas en terreno, enlaces, crónica y análisis para audiencias regionales.</p>
           </div>
         </article>
 
         <article class="card">
           <img class="svcImg" src="https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/09/imagen-de-whatsapp-2025-09-08-a-las-15.59.26_9e310f75.jpg?w=1400" alt="Comunicación estratégica" loading="lazy">
           <div class="p">
-            <h3>Comunicación estratégica</h3>
-            <p class="muted">Narrativa, claridad y ejecución para marcas y proyectos con exposición pública.</p>
+            <h3>Marketing y comunicación</h3>
+            <p class="muted">Narrativa, claridad y ejecución para marcas, líderes y proyectos con exposición pública.</p>
           </div>
         </article>
       </div>
@@ -383,21 +365,14 @@
     <section id="ultimos" aria-label="Últimos trabajos en Instagram">
       <div class="kicker">
         <h2>Últimos trabajos</h2>
-        <a class="tag" href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Abrir Instagram</a>
+        <span class="muted">@jcgutierreztv</span>
       </div>
 
       <div class="igGrid">
         <div class="card">
           <div class="p">
-            <h3>@jcgutierreztv</h3>
-            <p class="muted">
-              Aquí tienes acceso directo a mis trabajos recientes. Si el embed no carga, el botón te lleva al perfil.
-            </p>
-            <div class="ctaRow" style="margin-top:12px;">
-              <a class="btn primary" href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Ver últimos trabajos</a>
-              <a class="btn" href="https://www.youtube.com/@dearroyopro" target="_blank" rel="noopener">YouTube</a>
-              <a class="btn" href="https://www.linkedin.com/in/juancarlosgutierrezcorresponsal/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
+            <h3>Trabajo reciente</h3>
+            <p class="muted">Coberturas, entrevistas y clips. Actualización constante en Instagram.</p>
           </div>
         </div>
 
@@ -413,19 +388,19 @@
       </div>
     </section>
 
+    <!-- CIERRE: únicos botones -->
     <section id="contacto" aria-label="Contacto">
       <div class="card">
         <div class="p">
-          <div class="kicker">
-            <h2>Contacto</h2>
-            <a class="tag" href="/quien-soy.html">Perfil editorial</a>
-          </div>
+          <h2>Contacto</h2>
           <p class="muted">Propuestas editoriales, entrevistas, moderación o proyectos audiovisuales.</p>
 
-          <div class="ctaRow" style="margin-top:12px;">
-            <a class="btn primary" href="mailto:jcgutierreztv@gmail.com">Escríbeme</a>
+          <div class="ctaRow">
+            <a class="btn primary" href="/quien-soy.html">Quién soy</a>
+            <a class="btn" href="mailto:jcgutierreztv@gmail.com">Escríbeme</a>
             <a class="btn" href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Instagram</a>
             <a class="btn" href="https://www.linkedin.com/in/juancarlosgutierrezcorresponsal/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://www.youtube.com/@dearroyopro" target="_blank" rel="noopener">YouTube</a>
           </div>
         </div>
       </div>
@@ -435,6 +410,7 @@
       <div>© <span id="y"></span> Juan Carlos Gutiérrez</div>
       <div class="social">
         <a href="/quien-soy.html">Quién soy</a>
+        <a href="mailto:jcgutierreztv@gmail.com">Escríbeme</a>
         <a href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/juancarlosgutierrezcorresponsal/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.youtube.com/@dearroyopro" target="_blank" rel="noopener">YouTube</a>
