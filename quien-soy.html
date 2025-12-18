@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Quién soy | Juan Carlos Gutiérrez</title>
-  <meta name="description" content="Perfil editorial de Juan Carlos Gutiérrez: 25 años en televisión, conducción en vivo y cobertura internacional. Actualmente conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV)." />
+  <meta name="description" content="Juan Carlos Gutiérrez: periodista internacional y presentador con 25 años en TV. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV). Mercadólogo y especialista en comunicación." />
   <link rel="canonical" href="https://www.juancarlosgutierrez.tv/quien-soy.html" />
 
   <script type="application/ld+json">
@@ -14,8 +14,8 @@
     "@type": "Person",
     "name": "Juan Carlos Gutiérrez",
     "url": "https://www.juancarlosgutierrez.tv",
-    "jobTitle": "Periodista y presentador de noticieros en vivo",
-    "description": "Periodista internacional y presentador con 25 años en televisión. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV).",
+    "jobTitle": "Periodista, presentador y especialista en comunicación",
+    "description": "Periodista internacional y presentador con 25 años en televisión. Conduce DNEWS EN LA MAÑANA (DNEWS de DIRECTV). Mercadólogo y especialista en comunicación.",
     "worksFor": { "@type": "Organization", "name": "DNEWS" },
     "affiliation": { "@type": "Organization", "name": "DIRECTV" },
     "sameAs": [
@@ -44,16 +44,17 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 12% 0%, rgba(29,78,216,.14), transparent 55%),
-        radial-gradient(900px 520px at 88% 0%, rgba(124,58,237,.12), transparent 55%),
+        radial-gradient(900px 520px at 12% 0%, rgba(29,78,216,.16), transparent 55%),
+        radial-gradient(900px 520px at 88% 0%, rgba(124,58,237,.14), transparent 55%),
         var(--bg);
       line-height:1.6;
     }
     a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:22px}
+    .wrap{max-width:1040px;margin:0 auto;padding:22px}
+
     header{
       position:sticky;top:0;z-index:50;
-      background: rgba(246,247,251,.78);
+      background: rgba(246,247,251,.80);
       backdrop-filter: blur(12px);
       border-bottom:1px solid var(--line);
     }
@@ -76,6 +77,16 @@
       padding:8px 10px;border-radius:999px;
     }
     nav.links a:hover{background: rgba(15,23,42,.06)}
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr .92fr;
+      gap:18px;
+      padding:22px 0 10px;
+      align-items:stretch;
+    }
+    @media (max-width: 940px){ .hero{grid-template-columns:1fr} }
+
     .card{
       background: var(--card);
       border:1px solid var(--line);
@@ -84,24 +95,48 @@
       overflow:hidden;
     }
     .p{padding:22px}
+
     h1{
-      margin:18px 0 10px;
-      font-size: clamp(26px, 3.5vw, 38px);
-      line-height:1.12;
-      letter-spacing:-.2px;
+      margin:0 0 10px;
+      font-size: clamp(26px, 3.6vw, 42px);
+      line-height:1.10;
+      letter-spacing:-.25px;
     }
-    h2{margin:18px 0 10px;font-size:22px}
-    p{margin:0 0 12px}
+    .lead{margin:0 0 14px;color:var(--muted);font-size:18px;max-width:70ch}
+
+    .sidePhoto{
+      height:100%;
+      min-height: 280px;
+      background:
+        linear-gradient(180deg, rgba(2,6,23,.08), rgba(2,6,23,.40)),
+        url("https://juancarlosgutierreztv.wordpress.com/wp-content/uploads/2025/09/img_0935.jpg?w=1600");
+      background-size: cover;
+      background-position: 50% 30%;
+      display:flex;
+      align-items:flex-end;
+    }
+    .sidePhoto .caption{
+      width:100%;
+      padding:16px 18px;
+      color:#fff;
+      font-weight:900;
+      text-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+
+    section{padding:14px 0}
+    h2{margin:0 0 10px;font-size:22px}
     .muted{color:var(--muted)}
-    .bullets{margin:10px 0 0;padding-left:18px}
-    .bullets li{margin:10px 0}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 940px){ .grid2{grid-template-columns:1fr} }
+    .list{margin:10px 0 0;padding-left:18px}
+    .list li{margin:10px 0}
+
+    /* Botones: SOLO cierre */
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .btn{
       display:inline-flex;align-items:center;gap:10px;
-      padding:12px 14px;
-      border-radius: 12px;
-      text-decoration:none;
-      font-weight:900;
+      padding:12px 14px;border-radius:12px;
+      text-decoration:none;font-weight:900;
       border:1px solid var(--line);
       background: rgba(255,255,255,.75);
     }
@@ -109,7 +144,7 @@
       background: linear-gradient(90deg, var(--brand), var(--brand2));
       color:#fff;border:none;
     }
-    .btn:hover{transform: translateY(-1px)}
+
     .footer{
       border-top:1px solid var(--line);
       margin-top:18px;
@@ -118,6 +153,8 @@
       font-size:14px;
       display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
     }
+    .social{display:flex;gap:10px;flex-wrap:wrap}
+    .social a{text-decoration:none;font-weight:900}
   </style>
 </head>
 
@@ -129,52 +166,92 @@
         <nav class="links" aria-label="Navegación principal">
           <a href="/index.html">Inicio</a>
           <a href="/index.html#ultimos">Últimos trabajos</a>
-          <a href="/index.html#contacto">Contacto</a>
+          <a href="#contacto">Contacto</a>
         </nav>
       </div>
     </div>
   </header>
 
   <main class="wrap">
-    <div class="card">
-      <div class="p">
-        <h1>Periodista internacional y presentador con 25 años en televisión</h1>
+    <section class="hero" aria-label="Presentación">
+      <div class="card">
+        <div class="p">
+          <h1>Periodista internacional, presentador y comunicador</h1>
 
-        <p class="muted">
-          Conducción en vivo, entrevistas y coberturas internacionales con enfoque editorial y claridad narrativa.
-        </p>
+          <p class="lead">
+            Tengo <strong>25 años</strong> de trayectoria en televisión y proyectos internacionales.
+            He trabajado en cadenas y equipos de alto estándar, incluyendo <strong>Univision</strong> y <strong>CGTN Español</strong>, además de otras señales en América Latina y el mundo.
+          </p>
 
-        <p>
-          He desarrollado mi carrera durante <strong>25 años</strong> en medios de comunicación de América Latina y a nivel internacional.
-          He trabajado en cadenas y proyectos globales, incluyendo <strong>Univision</strong> y <strong>CGTN Español</strong>, además de otras señales de la región.
-        </p>
+          <p class="lead">
+            <strong>Hoy conduzco DNEWS EN LA MAÑANA</strong>, el noticiero matutino de <strong>DNEWS de DIRECTV</strong>, en vivo de lunes a viernes,
+            con <strong>4 horas diarias al aire</strong> dedicadas a información internacional, análisis y cobertura en tiempo real.
+          </p>
 
-        <p>
-          <strong>Hoy conduzco DNEWS EN LA MAÑANA</strong>, el noticiero matutino de <strong>DNEWS de DIRECTV</strong>, en vivo de lunes a viernes,
-          con <strong>4 horas diarias al aire</strong> dedicadas a la agenda internacional, el análisis informativo y la cobertura en tiempo real.
-        </p>
-
-        <h2>Perfil editorial</h2>
-        <ul class="bullets">
-          <li>Conducción de noticieros en vivo de larga duración, con manejo de cambios de agenda y breaking news.</li>
-          <li>Cobertura y análisis de procesos políticos, geopolíticos y sociales con mirada regional e internacional.</li>
-          <li>Entrevistas en vivo a líderes políticos, diplomáticos y analistas, en estudio y enlaces remotos.</li>
-          <li>Trabajo coordinado con equipos de producción y corresponsales en múltiples husos horarios.</li>
-          <li>Relatos informativos claros para audiencias amplias, con verificación y contexto.</li>
-        </ul>
-
-        <div class="ctaRow">
-          <a class="btn primary" href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Ver últimos trabajos</a>
-          <a class="btn" href="https://www.linkedin.com/in/juancarlosgutierrezcorresponsal/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://www.youtube.com/@dearroyopro" target="_blank" rel="noopener">YouTube</a>
-          <a class="btn" href="mailto:jcgutierreztv@gmail.com">Email</a>
+          <p class="muted">
+            Mi diferencial combina conducción en vivo, criterio editorial y estrategia de comunicación.
+          </p>
         </div>
       </div>
-    </div>
+
+      <div class="card sidePhoto" role="img" aria-label="Juan Carlos Gutiérrez en trabajo">
+        <div class="caption">Conducción, coberturas y producción.</div>
+      </div>
+    </section>
+
+    <section aria-label="Bloques de perfil">
+      <div class="grid2">
+        <div class="card">
+          <div class="p">
+            <h2>Perfil periodístico</h2>
+            <p class="muted">Conducción en vivo, entrevistas y cobertura internacional con contexto y ritmo televisivo.</p>
+            <ul class="list">
+              <li>Conducción de noticieros en vivo de larga duración.</li>
+              <li>Manejo de breaking news y cambios de agenda en tiempo real.</li>
+              <li>Entrevistas a líderes políticos, diplomáticos y analistas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="p">
+            <h2>Marketing y comunicación</h2>
+            <p class="muted">Estrategia, narrativa y posicionamiento para marcas y proyectos con exposición pública.</p>
+            <ul class="list">
+              <li>Diseño de mensajes claros para audiencias masivas.</li>
+              <li>Comunicación estratégica y reputación.</li>
+              <li>Producción audiovisual con enfoque de resultados.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" aria-label="Cierre y contacto">
+      <div class="card">
+        <div class="p">
+          <h2>Contacto</h2>
+          <p class="muted">Propuestas editoriales, entrevistas, moderación o proyectos audiovisuales y de comunicación.</p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="mailto:jcgutierreztv@gmail.com">Escríbeme</a>
+            <a class="btn" href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="https://www.linkedin.com/in/juancarlosgutierrezcorresponsal/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://www.youtube.com/@dearroyopro" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="footer">
       <div>© <span id="y"></span> Juan Carlos Gutiérrez</div>
-      <div><a href="/index.html">Inicio</a></div>
+      <div class="social">
+        <a href="/index.html">Inicio</a>
+        <a href="mailto:jcgutierreztv@gmail.com">Escríbeme</a>
+        <a href="https://www.instagram.com/jcgutierreztv/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/juancarlosgutierrezcorresponsal/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.youtube.com/@dearroyopro" target="_blank" rel="noopener">YouTube</a>
+      </div>
     </div>
   </main>
 
